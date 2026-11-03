@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.08), transparent 30%),
+    #050505;
+  color: white;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1), transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.06), transparent 35%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  * {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-slide {
+    animation: none;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+}
+
+.section-title {
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #050505;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-slide {
+  animation: slide 25s linear infinite;
+}
+
+.animate-slide:hover {
+  animation-play-state: paused;
+}
