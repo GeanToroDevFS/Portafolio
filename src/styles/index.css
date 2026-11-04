@@ -105,6 +105,12 @@ section {
     animation: none;
     opacity: 0.4;
   }
+
+  .hint-link::after {
+    animation: none;
+    transform: scaleX(0.55);
+    opacity: 0.8;
+  }
 }
 
 .glass-panel {
@@ -135,6 +141,50 @@ section {
 
 .animate-slide:hover {
   animation-play-state: paused;
+}
+
+.hint-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.hint-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.32rem;
+  width: 100%;
+  height: 1px;
+  background: #f0c14a;
+  transform: scaleX(0.45);
+  transform-origin: left center;
+  opacity: 0.55;
+  animation: hint-line 2.4s ease-in-out infinite;
+}
+
+.hint-link:hover,
+.hint-link:focus-visible {
+  color: #f0c14a;
+}
+
+.hint-link:hover::after,
+.hint-link:focus-visible::after,
+.hint-link[aria-current="page"]::after {
+  animation: none;
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+@keyframes hint-line {
+  0%,
+  100% {
+    transform: scaleX(0.45);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .star-field {

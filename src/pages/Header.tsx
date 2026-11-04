@@ -21,8 +21,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className="text-xl font-bold text-white hover:text-zinc-300 transition-colors tracking-tight"
+            className="hint-link inline-flex w-fit text-xl font-bold text-white tracking-tight"
             aria-label={`${PERSONAL_INFO.name} — Inicio`}
+            aria-current={location.pathname === '/' ? 'page' : undefined}
           >
             {PERSONAL_INFO.initials}.
           </Link>
@@ -33,10 +34,8 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'text-sm transition-colors',
-                  isActive(item.href)
-                    ? 'text-white font-medium'
-                    : 'text-zinc-400 hover:text-white'
+                  'hint-link inline-flex w-fit text-sm',
+                  isActive(item.href) ? 'text-white font-medium' : 'text-zinc-400'
                 )}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
@@ -74,10 +73,8 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'block px-2 py-3 text-sm transition-colors',
-                  isActive(item.href)
-                    ? 'text-white font-medium'
-                    : 'text-zinc-400 hover:text-white'
+                  'hint-link inline-flex w-fit my-2 text-sm',
+                  isActive(item.href) ? 'text-white font-medium' : 'text-zinc-400'
                 )}
                 role="menuitem"
                 onClick={() => setIsMenuOpen(false)}

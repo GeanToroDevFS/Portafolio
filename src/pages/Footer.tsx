@@ -17,7 +17,7 @@ const Footer = () => {
               href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="hint-link inline-flex"
               aria-label="GitHub (se abre en nueva pestaña)"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -28,7 +28,7 @@ const Footer = () => {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="hint-link inline-flex"
               aria-label="LinkedIn (se abre en nueva pestaña)"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -37,7 +37,7 @@ const Footer = () => {
             </a>
             <a
               href={`mailto:${socialLinks.email}`}
-              className="hover:text-white transition-colors"
+              className="hint-link inline-flex"
               aria-label="Enviar correo"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
