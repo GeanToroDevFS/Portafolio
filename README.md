@@ -1,6 +1,6 @@
 # Portafolio de Gean Franco Muñoz Toro
 
-Sitio personal de Gean Franco Muñoz Toro, tecnólogo en Desarrollo de Software. Presenta su perfil, la experiencia en Fexton S.A.S., los proyectos académicos de la Universidad del Valle y un formulario de contacto.
+Sitio personal de Gean Franco Muñoz Toro, tecnólogo en Desarrollo de Software. Presenta su perfil, la experiencia en Fexton S.A.S. y los proyectos académicos de la Universidad del Valle.
 
 ## Tecnologías
 
@@ -40,7 +40,7 @@ VITE_MY_EMAIL=
 
 Las variables `VITE_*` quedan visibles en el JavaScript compilado. No guardes contraseñas, tokens privados ni secretos en ellas. La clave de EmailJS que usa este proyecto es la clave pública del servicio.
 
-El correo y el teléfono no se muestran en la página. Están en la hoja de vida, en `public/Cv/HvAc.pdf`. `VITE_MY_EMAIL` es solo el destino interno del formulario y tampoco se publica.
+El teléfono no se muestra en la página. El correo tampoco se escribe como texto: el icono del pie abre un enlace `mailto:` con `VITE_MY_EMAIL`. Si esa variable está vacía, el icono no aparece. El mismo valor es el destino del formulario. La hoja de vida está en `public/Cv/HvAc.pdf`.
 
 Si EmailJS no está configurado, el sitio sigue funcionando y el formulario avisa que todavía no puede enviar.
 
@@ -74,7 +74,7 @@ La rama principal del repositorio es `master`. El portafolio se trabaja y se pub
 
 El proyecto está preparado para Vercel. `vercel.json` reescribe las rutas de React Router hacia `index.html`.
 
-El dominio es `https://www.geantoro.dev`. `public/robots.txt` apunta a `https://www.geantoro.dev/sitemap.xml`, y ese sitemap lista `/`, `/about`, `/projects` y `/contact`.
+El dominio es `https://www.geantoro.dev`. `public/robots.txt` apunta a `https://www.geantoro.dev/sitemap.xml`, y ese sitemap lista `/`, `/about` y `/projects`.
 
 En el panel del proyecto hay que crear las mismas variables de `.env.example` y volver a desplegar si cambian, porque Vite las incorpora al construir. La rama de producción en Vercel debe ser `Gfmt`.
 
