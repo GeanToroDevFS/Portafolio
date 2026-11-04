@@ -40,7 +40,7 @@ VITE_MY_EMAIL=
 
 Las variables `VITE_*` quedan visibles en el JavaScript compilado. No guardes contraseñas, tokens privados ni secretos en ellas. La clave de EmailJS que usa este proyecto es la clave pública del servicio.
 
-El teléfono no se muestra en la página. El correo tampoco se escribe como texto: el icono del pie abre un enlace `mailto:` con `VITE_MY_EMAIL`. Si esa variable está vacía, el icono no aparece. El mismo valor es el destino del formulario. La hoja de vida está en `public/Cv/HvAc.pdf`.
+El teléfono no se muestra en la página. El correo tampoco se escribe como texto: el icono del pie abre un enlace `mailto:`. `VITE_MY_EMAIL` puede reemplazar esa dirección. La hoja de vida está en `public/Cv/HvAc.pdf`.
 
 Si EmailJS no está configurado, el sitio sigue funcionando y el formulario avisa que todavía no puede enviar.
 

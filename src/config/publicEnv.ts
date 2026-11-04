@@ -24,8 +24,11 @@ export function readPublicEmail(value: unknown): string | undefined {
 /** Real GitHub account for this portfolio. Overridden by VITE_GITHUB_URL when that variable is set. */
 const GITHUB_PROFILE = 'https://github.com/GeanToroDevFS'
 
+/** Shown in the footer mailto icon, same as the CV. VITE_MY_EMAIL overrides it when set. */
+const CONTACT_EMAIL = 'gean.munoz@correounivalle.edu.co'
+
 export const socialLinks = {
   github: readPublicUrl(import.meta.env.VITE_GITHUB_URL) ?? GITHUB_PROFILE,
   linkedin: readPublicUrl(import.meta.env.VITE_LINKEDIN_URL),
-  email: readPublicEmail(import.meta.env.VITE_MY_EMAIL),
+  email: readPublicEmail(import.meta.env.VITE_MY_EMAIL) ?? CONTACT_EMAIL,
 }
