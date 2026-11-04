@@ -3,7 +3,6 @@ import type { EducationItem, ExperienceItem, Project, SkillGroup } from '@/types
 export const NAV_ITEMS = [
   { label: 'Sobre mí', href: '/about' },
   { label: 'Proyectos', href: '/projects' },
-  { label: 'Contacto', href: '/contact' },
 ] as const
 
 export const PERSONAL_INFO = {

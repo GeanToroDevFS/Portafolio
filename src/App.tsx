@@ -11,7 +11,6 @@ import ScrollToTop from './components/ScrollToTop'
 
 const About = lazy(() => import('./pages/About'))
 const Projects = lazy(() => import('./pages/Projects'))
-const Contact = lazy(() => import('./pages/Contact'))
 
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen" role="status" aria-label="Cargando">
@@ -55,11 +54,6 @@ const App = () => {
               <Route path="/projects" element={
                 <PageTransition>
                   <section aria-label="Proyectos"><Projects /></section>
-                </PageTransition>
-              } />
-              <Route path="/contact" element={
-                <PageTransition>
-                  <Contact />
                 </PageTransition>
               } />
               <Route path="*" element={<NotFound />} />

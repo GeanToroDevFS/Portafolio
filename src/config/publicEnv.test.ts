@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { readPublicUrl } from './publicEnv'
+import { readPublicEmail, readPublicUrl } from './publicEnv'
 
 describe('readPublicUrl', () => {
   it('keeps absolute http and https urls', () => {
@@ -15,5 +15,17 @@ describe('readPublicUrl', () => {
     expect(readPublicUrl('not a url')).toBeUndefined()
     expect(readPublicUrl('www.linkedin.com/in/example')).toBeUndefined()
     expect(readPublicUrl(undefined)).toBeUndefined()
+  })
+})
+
+describe('readPublicEmail', () => {
+  it('keeps a plain email address', () => {
+    expect(readPublicEmail('  persona@ejemplo.com  ')).toBe('persona@ejemplo.com')
+  })
+
+  it('rejects empty values and text that is not an email', () => {
+    expect(readPublicEmail('')).toBeUndefined()
+    expect(readPublicEmail('sin-arroba')).toBeUndefined()
+    expect(readPublicEmail(undefined)).toBeUndefined()
   })
 })
