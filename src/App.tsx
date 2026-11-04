@@ -6,6 +6,7 @@ import Footer from './pages/Footer'
 import Hero from './pages/Hero'
 import TechSlider from './components/TechSlider'
 import CustomCursor from './components/CustomCursor'
+import StarField from './components/StarField'
 import PageTransition from './components/PageTransition'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -32,7 +33,8 @@ const App = () => {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0a0a]">
+    <div className="isolate min-h-screen flex flex-col bg-[#050505]">
+      <StarField />
       <ScrollToTop />
       <CustomCursor />
       <Header />
