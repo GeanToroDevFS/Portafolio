@@ -11,9 +11,11 @@ import GeanFoto from '@/assets/gean-foto.jpg'
 import GithubIcon from '@/assets/github-icon.png'
 import LinkedinIcon from '@/assets/linkedln-icon.png'
 import UnivalleLogo from '@/assets/Univalle.svg.png'
+import FextonLogo from '@/assets/fexton-logo.gif'
 
 const LOGOS: Record<string, string> = {
   univalle: UnivalleLogo,
+  fexton: FextonLogo,
 }
 
 const ColombiaFlag = () => (
@@ -74,10 +76,10 @@ const About = () => {
             <p className="text-sm md:text-base text-zinc-400 mb-6">
               {PERSONAL_INFO.headline}
             </p>
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-zinc-300 leading-relaxed text-justify hyphens-none mb-4">
               {PERSONAL_INFO.description}
             </p>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-zinc-400 leading-relaxed text-justify hyphens-none">
               {PERSONAL_INFO.approach}
             </p>
 
@@ -144,7 +146,7 @@ const About = () => {
 
         <FadeIn>
           <section aria-labelledby="experience-title" className="mb-20">
-            <p className="text-zinc-400 text-xs tracking-widest uppercase mb-2">Recorrido</p>
+            <p className="text-zinc-600 text-xs tracking-widest uppercase mb-2">Recorrido</p>
             <h2 id="experience-title" className="text-2xl font-bold text-white tracking-tight mb-10">
               Experiencia
             </h2>
@@ -172,7 +174,7 @@ const About = () => {
                             <img
                               src={LOGOS[item.logo]}
                               alt={`Logo de ${item.company}`}
-                              className="h-6 w-auto object-contain"
+                              className={item.logo === 'fexton' ? 'h-7 w-auto object-contain' : 'h-6 w-auto object-contain'}
                             />
                           </div>
                           <span className="text-sm font-medium text-zinc-300">{item.company}</span>
@@ -195,7 +197,7 @@ const About = () => {
 
                     <h3 className="text-white font-semibold text-lg leading-tight">{item.role}</h3>
                     <p className="text-zinc-400 text-sm mb-2">{item.location}</p>
-                    <p className="text-zinc-300 text-sm leading-relaxed mb-3">{item.description}</p>
+                    <p className="text-zinc-300 text-sm leading-relaxed text-justify hyphens-none mb-3">{item.description}</p>
 
                     <ul className="flex flex-wrap gap-2" aria-label="Tecnologías usadas">
                       {item.tags.map((tag) => (

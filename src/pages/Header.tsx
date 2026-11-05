@@ -10,7 +10,10 @@ const Header = () => {
   const isActive = (path: string) => location.pathname.startsWith(path)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-zinc-900">
+    <header className={cn(
+      'fixed top-0 left-0 right-0 z-50 border-b border-zinc-900',
+      isMenuOpen ? 'bg-[#0a0a0a]' : 'bg-[#0a0a0a]/90 backdrop-blur-sm'
+    )}>
       <a
         href="#contenido"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded-md"
@@ -21,7 +24,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className="hint-link inline-flex w-fit text-xl font-bold text-white tracking-tight"
+            className="hint-link inline-flex w-fit text-2xl font-bold text-white tracking-tight"
             aria-label={`${PERSONAL_INFO.name} — Inicio`}
             aria-current={location.pathname === '/' ? 'page' : undefined}
           >
@@ -34,7 +37,7 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'hint-link inline-flex w-fit text-sm',
+                  'hint-link inline-flex w-fit text-base',
                   isActive(item.href) ? 'text-white font-medium' : 'text-zinc-400'
                 )}
                 aria-current={isActive(item.href) ? 'page' : undefined}
@@ -64,7 +67,7 @@ const Header = () => {
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden border-t border-zinc-900 py-3"
+            className="md:hidden flex flex-col gap-8 border-t border-zinc-800 bg-[#0a0a0a] pt-6 pb-8"
             role="menu"
             aria-label="Menú de navegación móvil"
           >
@@ -73,7 +76,7 @@ const Header = () => {
                 key={item.href}
                 to={item.href}
                 className={cn(
-                  'hint-link inline-flex w-fit my-2 text-sm',
+                  'hint-link inline-flex w-fit text-lg',
                   isActive(item.href) ? 'text-white font-medium' : 'text-zinc-400'
                 )}
                 role="menuitem"

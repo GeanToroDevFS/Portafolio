@@ -78,7 +78,7 @@ const Contact = () => {
         <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
           Hablemos
         </h2>
-        <p className="text-zinc-400 mb-12">
+        <p className="text-zinc-400 mb-12 text-justify hyphens-none">
           Si tienes una oportunidad o quieres conversar sobre un proyecto, escríbeme.
         </p>
 
